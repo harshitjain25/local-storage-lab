@@ -91,20 +91,20 @@ evidence/analysis_output.txt
 
 The required screenshots are:
 
-- `T4_before.png`
-- `T4_after.png`
-- `T6_invalid.png`
+- `T4_before.jpeg`
+- `T4_after.jpeg`
+- `T6_invalid.jpeg`
 
 ### T4 Before Restart
 
-`T4_before.png` shows:
+`T4_before.jpeg` shows:
 - River, age 21, ID 1
 - River, age 35, ID 2
 - Record count 2
 
 ### T4 After Restart
 
-`T4_after.png` shows:
+`T4_after.jpeg` shows:
 - River, age 21, ID 1
 - River, age 35, ID 2
 - Record count 2
@@ -112,7 +112,7 @@ The required screenshots are:
 
 ### T6 Invalid Input
 
-`T6_invalid.png` shows:
+`T6_invalid.jpeg` shows:
 - Blank guest name rejected
 - Age 21 entered
 - Validation message: `Please enter a guest name.`
@@ -121,9 +121,9 @@ The required screenshots are:
 
 ## Prompt 1 - The Disappearing-Data Mystery
 
-Before T4, I predicted that the saved guest records would still be present after a full app restart because they were stored in SQLite instead of only in widget memory. Before the restart, the app showed River ID 1 age 21 and River ID 2 age 35 with a count of 2 in `T4_before.png`.
+Before T4, I predicted that the saved guest records would still be present after a full app restart because they were stored in SQLite instead of only in widget memory. Before the restart, the app showed River ID 1 age 21 and River ID 2 age 35 with a count of 2 in `T4_before.jpeg`.
 
-For the restart, I stopped the Flutter debug session, used Android App Info to **Force stop** the app, and then reopened the same installed app without clearing storage or uninstalling it. After reopening, `T4_after.png` showed the same IDs, names, ages, and count.
+For the restart, I stopped the Flutter debug session, used Android App Info to **Force stop** the app, and then reopened the same installed app without clearing storage or uninstalling it. After reopening, `T4_after.jpeg` showed the same IDs, names, ages, and count.
 
 In my implementation, `DatabaseHelper` is initialized in `main()`. When the roster screen starts, `initState()` calls the load method, which uses `queryAllRows()` and `queryRowCount()`, and the returned values are displayed in the list.
 
@@ -160,9 +160,9 @@ lib/
 
 evidence/
 ├── analysis_output.txt
-├── T4_before.png
-├── T4_after.png
-└── T6_invalid.png
+├── T4_before.jpeg
+├── T4_after.jpeg
+└── T6_invalid.jpeg
 
 README.md
 pubspec.yaml

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'database_helper.dart';
+import 'screens/folders_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,8 +40,11 @@ class DirectoryApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fall Festival Roster',
-      home: DirectoryPage(helper: helper),
+      title: 'Card catalogue',
+      home: FoldersPage(
+        helper: helper,
+        rosterBuilder: (_) => DirectoryPage(helper: helper),
+      ),
     );
   }
 }
@@ -299,6 +303,8 @@ class _DirectoryPageState extends State<DirectoryPage> {
         );
       },
     );
+
+    if (!mounted) return;
 
     if (confirmed != true) {
       if (!mounted) return;
